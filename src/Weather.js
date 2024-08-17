@@ -5,6 +5,10 @@ export default function Weather() {
   return (
     <div className="Weather">
       <div className="container">
+        <form>
+          <input type="search" placeholder="Enter a city.." className="Cities"/>
+          <input type="submit" value="Search" className="btn btn-primary"/>
+        </form>
         <h1>Mokopane</h1>
         <ul>
           <li>Friday 09:00</li>
