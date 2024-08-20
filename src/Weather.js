@@ -18,11 +18,11 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       city: response.data.city,
       icon: response.data.condition.icon,
-      date: new Date(response.data.time) * 1000,
+      date: response.data.time,
     });
   }
   function handleSubmit(event) {
-    event.preventdefault();
+    event.preventDefault();
     let apiKey = "03036dt370ce468aff36bf274ca02od3";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleData);
@@ -33,15 +33,16 @@ export default function Weather(props) {
   if (WeatherInfo.ready === true) {
     return (
       <div className="Weather">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} keyDown={handleSubmit}>
           <input
             type="search"
             placeholder="Enter a city.."
             className="Cities"
             autoFocus="on"
             onChange={handleChange}
+            
           />
-          <input type="submit" value="Search" className="btn btn-primary" />
+          <input type="submit" value="Search" className="btn btn-primary"/>
         </form>
         <WeatherDetails data={WeatherInfo}/>
       </div>

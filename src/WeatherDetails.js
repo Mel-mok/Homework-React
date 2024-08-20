@@ -1,14 +1,15 @@
 import React from "react";
-
+import CalibratedDate from "./CalibratedDate";
 import "./WeatherDetails.css";
+
 
 export default function WeatherDetails(props) {
     return (
         <div className="WeatherDetails">
       <div className="container">
-        <h1>Mokopane</h1>
+        <h1>{props.data.city}</h1>
         <ul>
-          <li>{props.data.date}</li>
+          <li><CalibratedDate date={props.data.date}/></li>
           <li>{props.data.description}</li>
         </ul>
         <div className="row">
