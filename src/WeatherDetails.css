@@ -1,0 +1,43 @@
+.row {
+  display: flex;
+  margin: 20px 0;
+}
+.WeatherDetails h1 {
+  font-size: 24px;
+  margin: 30px 0 0;
+  color: #1f1f1f;
+}
+.column1 {
+  width: 250px;
+  display: flex;
+}
+.column2 {
+  margin: 0 20px;
+  padding-top: 10px;
+  width: 250px;
+}
+.WeatherDetails li {
+  list-style: none;
+  text-align: start;
+  line-height: 1.5;
+  font-size: 16px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+.Temperature {
+  font-size: 64px;
+  font-weight: bold;
+  color: #1f1f1f;
+}
+.icon {
+  height: 80px;
+  padding-top: 15px;
+  margin-top: -2px;
+  margin-right: -8px;
+}
+.Unit {
+  font-size: 16px;
+  margin-top: 15px;
+}
