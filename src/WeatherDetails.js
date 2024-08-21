@@ -1,5 +1,6 @@
 import React from "react";
 import CalibratedDate from "./CalibratedDate";
+import TemperatureUnit from "./TemperatureUnit";
 import "./WeatherDetails.css";
 
 
@@ -19,8 +20,7 @@ export default function WeatherDetails(props) {
               src={`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.data.icon}.png`}
               alt="weather-icon"
             />
-            <span className="Temperature">{props.data.temperature}</span>
-            <span className="Unit">°C | F</span>
+            <TemperatureUnit celsius={props.data.temperature} />
           </div>
           <div className="col-6 column2">
             <ul>

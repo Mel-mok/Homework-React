@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import WeatherDetails from "./WeatherDetails";
 
+
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -33,7 +34,7 @@ export default function Weather(props) {
   if (WeatherInfo.ready === true) {
     return (
       <div className="Weather">
-        <form onSubmit={handleSubmit} keyDown={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <input
             type="search"
             placeholder="Enter a city.."
@@ -53,7 +54,10 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleData);
 
     return (
+      <div className="Loader">
      <h1>Loading....</h1>
+    
+     </div>
     );
   }
 }
