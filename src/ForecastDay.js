@@ -2,7 +2,6 @@ import React from "react";
 
 
 import "./ForecastDay.css";
-import "./WeatherDetails.css";
 
 export default function ForecastDay(props) { 
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -12,8 +11,8 @@ export default function ForecastDay(props) {
         <div className="ForecastDay">
         <ul>
         <li>{day.slice(0,3)}</li>
-        <li> <img
-            className="img-fluid icon"
+        <li className="ForecastIcon"> <img
+            className="icon"
             src={`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.data.condition.icon}.png`}
             alt="weather-icon"
             /></li>
