@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherDetails from "./WeatherDetails";
-
+import WeatherForecast from "./WeatherForecast";
 
 import "./Weather.css";
 
@@ -20,6 +20,8 @@ export default function Weather(props) {
       city: response.data.city,
       icon: response.data.condition.icon,
       date: response.data.time,
+      latitude: response.data.latitude,
+      longitude: response.data.longitude,
     });
   }
   function handleSubmit(event) {
@@ -41,11 +43,11 @@ export default function Weather(props) {
             className="Cities"
             autoFocus="on"
             onChange={handleChange}
-            
           />
-          <input type="submit" value="Search" className="btn btn-primary"/>
+          <input type="submit" value="Search" className="btn btn-primary" />
         </form>
-        <WeatherDetails data={WeatherInfo}/>
+        <WeatherDetails data={WeatherInfo} />
+        <WeatherForecast forecast={WeatherInfo} />
       </div>
     );
   } else {
@@ -55,9 +57,8 @@ export default function Weather(props) {
 
     return (
       <div className="Loader">
-     <h1>Loading....</h1>
-    
-     </div>
+        <h1>Loading....</h1>
+      </div>
     );
   }
 }
