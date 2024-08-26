@@ -10,10 +10,10 @@ export default function WeatherForecast(props){
     const [Loaded, setLoaded] = useState(false);
     const [ForecastInfo, setForecastInfo]= useState({});
 
-useEffect(() => {setLoaded(false)},[props.city]);
+    useEffect(() => { setLoaded(false) }, [props.forecast.city]);
+    
     function handleResponse(response) {
         setLoaded(true);
-        console.log(response.data);
         setForecastInfo(response.data.daily);
     }
     if(Loaded === true){
