@@ -22,12 +22,12 @@ useEffect(() => {setLoaded(false)},[props.city]);
             <div className="WeatherForecast">
                 {ForecastInfo.map(function (Forecast, index) {
                     if (index < 6) {
-                    return (
-                    <ul key={index}>
-                    <ForecastDay data={Forecast} />
-                    </ul>
-                    );
-                    } return null;
+                        return (
+                            <ul key={index}>
+                                <ForecastDay data={Forecast} />
+                            </ul>
+                        );
+                    } else { return null; }
                 })}
             </div>
         );
